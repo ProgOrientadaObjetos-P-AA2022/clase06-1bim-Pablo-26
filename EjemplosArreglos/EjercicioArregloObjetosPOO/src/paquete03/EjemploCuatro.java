@@ -7,7 +7,7 @@ package paquete03;
 
 import paquete01.Calificacion;
 
-public class Ejemplo {
+public class EjemploCuatro {
     public static void main(String[] args) {
         // crear un arreglo de objetos de tipo Calificacion
         Calificacion [] calificaciones = new Calificacion[3];
@@ -23,10 +23,16 @@ public class Ejemplo {
         double suma = 0, prom;
         for (int i = 0; i < calificaciones.length; i++) {
             Calificacion objetoCalificacion = calificaciones[i];
-            System.out.printf("%s - %.2f\n", 
-                    objetoCalificacion.obtenerNombreMateria(),
-                    objetoCalificacion.obtenerNota());
+            suma += objetoCalificacion.obtenerNota();   
         }
+        prom = suma / calificaciones.length;
         
+        System.out.printf("%.2f\n",prom);
+        
+        //-------------------------------------------
+        for (int i = 0; i < calificaciones.length; i++) {
+            Calificacion objetoCalificacion = calificaciones[i];
+            System.out.printf("%s\n", objetoCalificacion.obtenerNombreMateria());
+        }
     }
 }
